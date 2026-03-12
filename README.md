@@ -93,7 +93,7 @@ cp -r WDS-SKILLS/.claude/skills/wds-review ~/Desktop/my-project/.claude/skills/
 > `/wds-review` 스킬은 WDS의 컴포넌트, 토큰, 패턴 정보를 **MCP 서버에서 실시간으로 조회**하며 리뷰합니다.
 > MCP가 설치되어 있지 않으면 리뷰의 정확도가 크게 떨어지거나, 검증 자체가 불가능합니다.
 
-WDS MCP 플러그인 설치 방법은 **사내 Montage 문서**를 참고해주세요.
+WDS MCP 플러그인 설치를 원하시면 **원티드 디자인 시스템 TF**에 문의해주세요.
 
 > **설치 확인 방법:** Claude Code에서 `"WDS 컴포넌트 목록 보여줘"` 라고 입력했을 때 컴포넌트 리스트가 나오면 정상 설치된 것입니다.
 
