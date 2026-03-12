@@ -124,7 +124,7 @@ claude
 4. 리뷰할 디자인 파일이나 URL을 함께 전달합니다.
 
 ```
-/wds-review 이 Figma 디자인을 WDS 기준으로 리뷰해줘: [Figma URL]
+/wds-review 이 페이지의 디자인을 WDS 기준으로 리뷰해줘: [Figma URL]
 ```
 
 ---
