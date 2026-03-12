@@ -86,7 +86,20 @@ cp -r WDS-SKILLS/.claude/skills/wds-review ~/Desktop/my-project/.claude/skills/
 
 ---
 
-### Step 3. Claude Code에서 사용하기
+### Step 3. WDS 디자인 시스템 MCP 플러그인 설치하기 (필수)
+
+> **이 단계를 건너뛰면 `/wds-review` 스킬이 제대로 동작하지 않습니다.**
+>
+> `/wds-review` 스킬은 WDS의 컴포넌트, 토큰, 패턴 정보를 **MCP 서버에서 실시간으로 조회**하며 리뷰합니다.
+> MCP가 설치되어 있지 않으면 리뷰의 정확도가 크게 떨어지거나, 검증 자체가 불가능합니다.
+
+WDS MCP 플러그인 설치 방법은 **사내 Montage 문서**를 참고해주세요.
+
+> **설치 확인 방법:** Claude Code에서 `"WDS 컴포넌트 목록 보여줘"` 라고 입력했을 때 컴포넌트 리스트가 나오면 정상 설치된 것입니다.
+
+---
+
+### Step 4. Claude Code에서 사용하기
 
 1. 터미널에서 내 프로젝트 폴더로 이동합니다.
 
@@ -169,6 +182,11 @@ cp -r .claude/skills/wds-review 내프로젝트경로/.claude/skills/
 
 - `.claude/skills/wds-review/SKILL.md` 파일이 프로젝트 안에 있는지 확인해주세요.
 - Claude Code를 프로젝트 폴더 안에서 실행했는지 확인해주세요.
+
+### Q. 리뷰 결과가 부정확하거나 컴포넌트 정보가 나오지 않아요
+
+- **WDS MCP 플러그인이 설치되지 않았을 가능성이 높습니다.** Step 3을 반드시 먼저 완료해주세요.
+- Claude Code에서 `"WDS 컴포넌트 목록 보여줘"` 라고 입력해서 MCP가 정상 동작하는지 확인해보세요.
 
 ### Q. 디자이너인데 터미널을 처음 써봐요
 
