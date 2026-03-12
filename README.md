@@ -12,6 +12,19 @@ Wanted Design System(WDS)용 Claude Code 커스텀 스킬 모음입니다.
 >
 > **설치 확인:** Claude Code에서 `"WDS 컴포넌트 목록 보여줘"` 입력 → 목록이 나오면 정상
 
+> ### **Figma 디자인 리뷰도 가능합니다**
+>
+> Figma URL을 전달하면 디자인 파일을 직접 읽어와 WDS 기준으로 리뷰할 수 있습니다.
+> 이 기능을 사용하려면 **Figma MCP 서버**가 추가로 설치되어 있어야 합니다.
+>
+> **설치 방법:** Claude Code에서 아래 명령어 입력
+> ```
+> claude mcp add figma -- npx -y figma-developer-mcp --figma-api-key=YOUR_FIGMA_API_KEY
+> ```
+> Figma API Key는 [Figma 설정 > Personal access tokens](https://www.figma.com/developers/api#access-tokens)에서 발급받을 수 있습니다.
+>
+> **설치 확인:** Claude Code에서 Figma URL을 전달했을 때 디자인 정보가 조회되면 정상
+
 ---
 
 ## 포함된 스킬
