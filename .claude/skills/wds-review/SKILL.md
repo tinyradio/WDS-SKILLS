@@ -1,13 +1,13 @@
 ---
 name: wds-review
-description: Audit whether a UI or design proposal correctly applies the Wanted Design System using MCP as the source of truth. Detect component misuse, token violations, visual quality issues, DS gaps, and produce a WDS Design Compliance Score.
+description: Audit whether a UI or design proposal correctly applies the Wanted Design System, using the Montage docs Design tab for variants and states and the MCP for API and tokens. Detect component misuse, token violations, visual quality issues, DS gaps, and produce a WDS Design Compliance Score.
 ---
 
 # WDS Review v3 (Wanted Design System Compliance + Design Score)
 
 This skill reviews UI designs and evaluates whether the **Wanted Design System (WDS)** has been applied correctly while also assessing **overall design quality and usability**.
 
-The **Wanted Design System MCP package is the single source of truth**.
+There are two sources of truth: the **Montage docs Design tab** for how a component should look and behave, and the **Montage MCP** for its API and tokens (see Source of Truth).
 
 This skill functions as a **Design System Compliance Auditor** and **Design Quality Evaluator**.
 
@@ -27,19 +27,23 @@ The goal is to ensure designs are **consistent, scalable, visually refined, and 
 
 # Source of Truth
 
-All validation must reference the **Wanted Design System MCP package**.
+**Montage docs Design tab (Usage, States, Anatomy)** decides:
 
-Always verify against MCP for:
+- which variant fits the situation
+- component states and how each one looks
+- anatomy and composition patterns
 
-- components
-- component variants
-- component states
-- tokens
-- composition patterns
+The cover image at the top of a docs page is an illustration, not a spec.
 
-If a design conflicts with MCP definitions:
+**Montage MCP (`get_component`, `list_tokens`)** decides:
 
-**MCP definitions override the design.**
+- which components exist
+- props, sub-components and allowed values (the API)
+- token names and values
+
+The MCP only gives the API; it does not settle which variant or state a design should use.
+
+If a design conflicts with these sources, the sources override the design. If the Design tab and the MCP seem to disagree, check the Design tab images first; if they still differ, report the conflict to the user instead of picking one.
 
 ---
 
@@ -56,19 +60,6 @@ When reviewing a design, evaluate the following dimensions:
 7. Visual polish
 8. Usability clarity
 9. Potential design system gaps
-
----
-
-# Review Process
-
-Step 1 — Identify UI components used
-Step 2 — Compare components with MCP definitions
-Step 3 — Validate component variants and states
-Step 4 — Verify token usage
-Step 5 — Evaluate layout hierarchy and spacing rhythm
-Step 6 — Detect misuse or duplicated patterns
-Step 7 — Evaluate visual polish and usability
-Step 8 — Identify potential DS gaps
 
 ---
 
@@ -275,19 +266,19 @@ Usability and interaction clarity.
 
 # Score Output Format
 
-Provide a summary score.
+Provide a summary score. The total is the average of the five category scores, rounded to a whole number.
 
-Example:
+Format:
 
 WDS Compliance Score
 
-Component Usage: 92
-Token Usage: 88
-Pattern Consistency: 90
-Visual Quality: 85
-Interaction Quality: 87
+Component Usage: <0–100>
+Token Usage: <0–100>
+Pattern Consistency: <0–100>
+Visual Quality: <0–100>
+Interaction Quality: <0–100>
 
-**Total Score: 88**
+**Total Score: <average>**
 
 Interpretation:
 
